@@ -3,68 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cricket Auction Registration</title>
+    <title>India vs England - 1st ODI Live Streaming</title>
+    
+    <!-- Video.js CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/video.js/8.3.0/video-js.min.css" rel="stylesheet">
+
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: #ffffff;
             margin: 0;
             padding: 0;
         }
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: white;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-        }
+
         h1 {
             text-align: center;
-            color: #333;
+            color: #FFD700;
+            margin: 30px 0;
+            font-size: 2.5em;
+            text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
         }
-        .content {
+
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .video-container {
+            width: 100%;
+            max-width: 900px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8);
+            background-color: #222;
+            margin-top: 20px;
+        }
+
+        .dropdown-container {
+            margin-top: 20px;
             text-align: center;
-            margin-bottom: 20px;
         }
-        .content p {
-            font-size: 16px;
-            color: #555;
+
+        .dropdown-container label {
+            font-size: 1.2em;
+            color: #FFD700;
+        }
+
+        .dropdown {
+            padding: 12px;
+            font-size: 1em;
+            background-color: #003366;
+            color: #ffffff;
+            border: none;
+            border-radius: 8px;
+            margin-left: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .dropdown:hover {
+            background-color: #FFD700;
+            color: #003366;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>📢 Cricket Auction Registration is Now Open! 📢</h1>
-        <div class="content">
-            <p>🏏 Get ready for a Trial Run! We are conducting a Test Auction to ensure everything runs smoothly before the main event!</p>
-            <p>📝 How to Register:</p>
-            <p>Registration is open now and will close on 23rd September, 12 PM (Afternoon).</p>
-            <p>⚠️ Important:</p>
-            <p>Test Auction is mandatory for all participants to practice and familiarize themselves with the auction process.</p>
-            <p>Ensure you're registered to take part in this important trial!</p>
-            <p>🏆 Let’s gear up and make sure everyone is auction-ready!</p>
+    <h1>India vs England - 1st ODI Live Streaming</h1>
+
+    <div class="main-content">
+        <!-- Video Container -->
+        <div class="video-container">
+            <video id="liveFeed" class="video-js vjs-default-skin" controls autoplay muted width="900" height="500">
+                <source src="http://23.134.91.95:8080/live/77889/77889/96003.ts?token=TEYOV0sLFwgaBVdQBVVUA11WBAUDWABSWwRUBVFXAFVVXV5QXQBTVAkTGRZHFxZSWV1vCgUbCVsPUlMBH0ZAElIWOV9cQQ8QDQgBAwRBSBVMWV0GQwMCVQpaWwMHXQdTG0YWX1xBDxAJBwEMBUFIFV1IRAYTV1IOZgYGRFoHUEMNChNaVE8XXVZuUVFZAgpTGgoSU0MVEQtKEkEIXRFZDRtGBF9MEVRGXRMPFgdQVg4aHBIADkxdFksbQQgRMWZDG0YDTkwGW0FRXlsWDkEQRBocEgoSZkEHShYRV1IJUBMVXkQGGk8XX1lJaldbDQpSW0RZDA9KEVgbU0EeEQlaD14QCURnE1xWGgsXBwZVVQUaTQ==" type="application/x-mpegURL">
+            </video>
         </div>
 
-        <!-- JotForm iFrame Embed -->
-        <iframe
-            id="JotFormIFrame-242632088860460"
-            title="Cricket Auction Registration Form"
-            onload="window.parent.scrollTo(0,0)"
-            allowtransparency="true"
-            allow="geolocation; microphone; camera; fullscreen"
-            src="https://form.jotform.com/242632088860460"
-            frameborder="0"
-            style="min-width:100%;max-width:100%;height:800px;border:none;"
-            scrolling="no"
-        >
-        </iframe>
-
-        <!-- Script to handle form embed -->
-        <script src='https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js'></script>
-        <script>
-            window.jotformEmbedHandler("iframe[id='JotFormIFrame-242632088860460']", "https://form.jotform.com/");
-        </script>
+        <!-- Dropdown for Channel Selection -->
+        <div class="dropdown-container">
+            <label for="channelSelect">Choose Channel:</label>
+            <select id="channelSelect" class="dropdown" onchange="changeChannel()">
+                <option value="http://23.134.91.95:8080/live/77889/77889/96003.ts?token=TEYOV0sLFwgaBVdQBVVUA11WBAUDWABSWwRUBVFXAFVVXV5QXQBTVAkTGRZHFxZSWV1vCgUbCVsPUlMBH0ZAElIWOV9cQQ8QDQgBAwRBSBVMWV0GQwMCVQpaWwMHXQdTG0YWX1xBDxAJBwEMBUFIFV1IRAYTV1IOZgYGRFoHUEMNChNaVE8XXVZuUVFZAgpTGgoSU0MVEQtKEkEIXRFZDRtGBF9MEVRGXRMPFgdQVg4aHBIADkxdFksbQQgRMWZDG0YDTkwGW0FRXlsWDkEQRBocEgoSZkEHShYRV1IJUBMVXkQGGk8XX1lJaldbDQpSW0RZDA9KEVgbU0EeEQlaD14QCURnE1xWGgsXBwZVVQUaTQ==">SPORTS 18 HD 4K</option>
+                <option value="http://188.241.219.18/live/qwe123/qwe123/98908.ts?token=ShJcU0BbQQNHXAcOAlQADQlRBFUCAVNTCVEHVAcGBwEEAQ0DUFAAWgQbGBpEF0dcWF1vWQIXXlgJW1IPSUZGQVRCa1tXEVkbVAkGAQNQAxsVEkRZC1BGWwBVUQ9dVgcGBQUYEENaBxtfGwAIBFcXFRtVSEQDRwoAXT0GUhMNUFcTClpHX19PGwpXa1xSDlRXXRIKElYXSENYERIVXwpGXl0cFlBaRxFYEVwWAhVQDQEMEhwSBVoRD0UQGxVfRnp8ExwWV0tHBlcWUFtWFVkXTUoSHBIPRjsTVBEWRQAFXldDEg4QAxFPGwhYTGdUDFtXXFNEWQlbF0MLQFMVSUZeXV9ZQF1BbBNQARsOGg5VABtE">Colors Cineplex</option>
+                <option value="https://a201aivottlinear-a.akamaihd.net/OTTB/lhr-nitro/clients/dash/enc/wf8usag51e/out/v1/bd3b0c314fff4bb1ab4693358f3cd2d3/cenc.mpd?|drmScheme=clearkey&drmLicense=ae26845bd33038a9c0774a0981007294:63ac662dde310cfb4cc6f9b43b34196d">TNT FHD</option>
+            </select>
+        </div>
     </div>
+
+    <!-- Video.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/video.js/8.3.0/video.min.js"></script>
+
+    <script>
+        // Initialize Video.js Player
+        var player = videojs('liveFeed');
+
+        // Function to change the channel
+        function changeChannel() {
+            const selectedChannel = document.getElementById('channelSelect').value;
+
+            // Update video source dynamically
+            player.src({ src: selectedChannel, type: 'application/x-mpegURL' });
+            player.play();
+
+            // Show Telegram alert with options
+            if (confirm("Join our Telegram channel for live match updates?")) {
+                window.location.href = "https://t.me/+NFoX453eVVI4N2M1"; // Redirects to Telegram
+            }
+        }
+    </script>
 </body>
 </html>
