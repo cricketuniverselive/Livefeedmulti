@@ -3,11 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>India vs England - 1st ODI Live Streaming</title>
-    
-    <!-- Video.js CSS -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/video.js/8.3.0/video-js.min.css" rel="stylesheet">
-
+    <title>IDFC FIRST Bank Ranji Trophy - Live Streaming</title>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script> 
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -16,7 +13,6 @@
             margin: 0;
             padding: 0;
         }
-
         h1 {
             text-align: center;
             color: #FFD700;
@@ -24,14 +20,12 @@
             font-size: 2.5em;
             text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
         }
-
         .main-content {
             display: flex;
             flex-direction: column;
             align-items: center;
             padding: 20px;
         }
-
         .video-container {
             width: 100%;
             max-width: 900px;
@@ -41,17 +35,18 @@
             background-color: #222;
             margin-top: 20px;
         }
-
+        video {
+            width: 100%;
+            height: 500px;
+        }
         .dropdown-container {
             margin-top: 20px;
             text-align: center;
         }
-
         .dropdown-container label {
             font-size: 1.2em;
             color: #FFD700;
         }
-
         .dropdown {
             padding: 12px;
             font-size: 1em;
@@ -63,7 +58,6 @@
             cursor: pointer;
             transition: all 0.3s ease;
         }
-
         .dropdown:hover {
             background-color: #FFD700;
             color: #003366;
@@ -71,47 +65,53 @@
     </style>
 </head>
 <body>
-    <h1>India vs England - 1st ODI Live Streaming</h1>
-
+    <h1>IDFC FIRST Bank Ranji Trophy - Live Streaming</h1>
     <div class="main-content">
-        <!-- Video Container -->
         <div class="video-container">
-            <video id="liveFeed" class="video-js vjs-default-skin" controls autoplay muted width="900" height="500">
-                <source src="http://23.134.91.95:8080/live/77889/77889/96003.ts?token=TEYOV0sLFwgaBVdQBVVUA11WBAUDWABSWwRUBVFXAFVVXV5QXQBTVAkTGRZHFxZSWV1vCgUbCVsPUlMBH0ZAElIWOV9cQQ8QDQgBAwRBSBVMWV0GQwMCVQpaWwMHXQdTG0YWX1xBDxAJBwEMBUFIFV1IRAYTV1IOZgYGRFoHUEMNChNaVE8XXVZuUVFZAgpTGgoSU0MVEQtKEkEIXRFZDRtGBF9MEVRGXRMPFgdQVg4aHBIADkxdFksbQQgRMWZDG0YDTkwGW0FRXlsWDkEQRBocEgoSZkEHShYRV1IJUBMVXkQGGk8XX1lJaldbDQpSW0RZDA9KEVgbU0EeEQlaD14QCURnE1xWGgsXBwZVVQUaTQ==" type="application/x-mpegURL">
-            </video>
+            <video id="liveFeed" controls autoplay muted></video>
         </div>
-
-        <!-- Dropdown for Channel Selection -->
         <div class="dropdown-container">
-            <label for="channelSelect">Choose Channel:</label>
-            <select id="channelSelect" class="dropdown" onchange="changeChannel()">
-                <option value="http://23.134.91.95:8080/live/77889/77889/96003.ts?token=TEYOV0sLFwgaBVdQBVVUA11WBAUDWABSWwRUBVFXAFVVXV5QXQBTVAkTGRZHFxZSWV1vCgUbCVsPUlMBH0ZAElIWOV9cQQ8QDQgBAwRBSBVMWV0GQwMCVQpaWwMHXQdTG0YWX1xBDxAJBwEMBUFIFV1IRAYTV1IOZgYGRFoHUEMNChNaVE8XXVZuUVFZAgpTGgoSU0MVEQtKEkEIXRFZDRtGBF9MEVRGXRMPFgdQVg4aHBIADkxdFksbQQgRMWZDG0YDTkwGW0FRXlsWDkEQRBocEgoSZkEHShYRV1IJUBMVXkQGGk8XX1lJaldbDQpSW0RZDA9KEVgbU0EeEQlaD14QCURnE1xWGgsXBwZVVQUaTQ==">SPORTS 18 HD 4K</option>
-                <option value="http://188.241.219.18/live/qwe123/qwe123/98908.ts?token=ShJcU0BbQQNHXAcOAlQADQlRBFUCAVNTCVEHVAcGBwEEAQ0DUFAAWgQbGBpEF0dcWF1vWQIXXlgJW1IPSUZGQVRCa1tXEVkbVAkGAQNQAxsVEkRZC1BGWwBVUQ9dVgcGBQUYEENaBxtfGwAIBFcXFRtVSEQDRwoAXT0GUhMNUFcTClpHX19PGwpXa1xSDlRXXRIKElYXSENYERIVXwpGXl0cFlBaRxFYEVwWAhVQDQEMEhwSBVoRD0UQGxVfRnp8ExwWV0tHBlcWUFtWFVkXTUoSHBIPRjsTVBEWRQAFXldDEg4QAxFPGwhYTGdUDFtXXFNEWQlbF0MLQFMVSUZeXV9ZQF1BbBNQARsOGg5VABtE">Colors Cineplex</option>
-                <option value="https://a201aivottlinear-a.akamaihd.net/OTTB/lhr-nitro/clients/dash/enc/wf8usag51e/out/v1/bd3b0c314fff4bb1ab4693358f3cd2d3/cenc.mpd?|drmScheme=clearkey&drmLicense=ae26845bd33038a9c0774a0981007294:63ac662dde310cfb4cc6f9b43b34196d">TNT FHD</option>
+            <label for="matchSelect">Choose Match:</label>
+            <select id="matchSelect" class="dropdown" onchange="changeMatch()">
+                <option value="https://prod-sports-eng-cf.jiocinema.com/hls/live/2100307/hd_akamai_merged_avc_eng_cricket_m4_080225/master.m3u8">Haryana vs Mumbai</option>
+                <option value="https://prod-sports-eng-cf.jiocinema.com/hls/live/2100306/hd_akamai_merged_avc_eng_cricket_m2_080225/master_p7.m3u8">Vidarbha vs Tamil Nadu</option>
+                <option value="https://prod-sports-eng-cf.jiocinema.com/hls/live/2100306/hd_akamai_merged_avc_eng_cricket_m1_080225/master.m3u8">Saurashtra vs Gujarat</option>
+                <option value="https://prod-sports-eng-cf.jiocinema.com/hls/live/2100306/hd_akamai_merged_avc_eng_cricket_m3_080225/master.m3u8">Jammu & Kashmir vs Kerala</option>
             </select>
         </div>
     </div>
 
-    <!-- Video.js Library -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/video.js/8.3.0/video.min.js"></script>
-
     <script>
-        // Initialize Video.js Player
-        var player = videojs('liveFeed');
+        const videoElement = document.getElementById('liveFeed');
+        const matchSelect = document.getElementById('matchSelect');
 
-        // Function to change the channel
-        function changeChannel() {
-            const selectedChannel = document.getElementById('channelSelect').value;
-
-            // Update video source dynamically
-            player.src({ src: selectedChannel, type: 'application/x-mpegURL' });
-            player.play();
-
-            // Show Telegram alert with options
-            if (confirm("Join our Telegram channel for live match updates?")) {
-                window.location.href = "https://t.me/+NFoX453eVVI4N2M1"; // Redirects to Telegram
+        function loadStream(url) {
+            if (Hls.isSupported()) {
+                const hls = new Hls();
+                hls.loadSource(url);
+                hls.attachMedia(videoElement);
+            } else if (videoElement.canPlayType('application/vnd.apple.mpegurl')) {
+                videoElement.src = url;
             }
+            videoElement.load();
+            videoElement.play();
         }
+
+        function changeMatch() {
+            const selectedMatch = matchSelect.value;
+            loadStream(selectedMatch);
+        }
+
+        // Load the first match by default
+        loadStream(matchSelect.value);
+
+        // Show Telegram join alert once on page load
+        window.onload = function () {
+            const userChoice = confirm("Join our Telegram channel for updates?");
+            if (userChoice) {
+                window.location.href = "https://t.me/+NFoX453eVVI4N2M1";
+            }
+        };
     </script>
 </body>
 </html>
